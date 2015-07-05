@@ -12,4 +12,7 @@ Every Plugin instance has 2 inputs (stereo) and 6 outupts.
 -Outputs 5 and 6 are Send B (L and R)
 
 ________
+Screenshot: 8 instances of LiveMixer used in Carla.
+
+________
 Use the Faust Online Compiler to compile it as Standalone or audio plugin: http://faust.grame.fr/
