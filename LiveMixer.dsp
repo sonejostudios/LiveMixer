@@ -1,5 +1,5 @@
 declare name        "LiveMixer";
-declare version     "0.1";
+declare version     "0.2";
 declare author      "Vincent Rateau";
 declare license     "GPLv2";
 
