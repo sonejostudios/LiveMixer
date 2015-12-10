@@ -8,6 +8,7 @@ declare license     "GPLv2";
 //-----------------------------------------------
 
 import("music.lib");
+import("filter.lib");
 
 
 //process = hgroup("LiveMixer", par(i,1, vgroup("%i", stereostrip : route))) ;
@@ -25,10 +26,8 @@ send = _ <: _ * send1, _ * send2;
 channel = _ * slider;
 
 // gui
-slider = vslider("[3]Volume", 0, -70, +0, 0.1) : db2linear : smooth(0.999);
-send1 = vslider("[1]Send A[style:knob]", 0, -70, +0, 0.1) : db2linear : smooth(0.999);
-send2 = vslider("[2]Send B[style:knob]", 0, -70, +0, 0.1) : db2linear : smooth(0.999);
+slider = vslider("[3]Volume", 1, 0, 1, 0.01) : smooth(0.999);
+send1 = vslider("[1]Send A[style:knob]", 1, 0, 1, 0.01) : smooth(0.999);
+send2 = vslider("[2]Send B[style:knob]", 1, 0, 1, 0.01) : smooth(0.999);
 
 
-//smooth
-smooth(c)	= *(1-c) : +~*(c);
