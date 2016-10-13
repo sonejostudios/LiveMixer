@@ -7,9 +7,8 @@ declare license     "GPLv2";
 //              A 8-Tracks Stereo MIxer with 2 Sends
 //-----------------------------------------------
 
-import("music.lib");
-import("filter.lib");
 
+import("stdfaust.lib");
 
 //process = hgroup("LiveMixer", par(i,1, vgroup("%i", stereostrip : route))) ;
 
@@ -26,8 +25,6 @@ send = _ <: _ * send1, _ * send2;
 channel = _ * slider;
 
 // gui
-slider = vslider("[3]Volume", 1, 0, 1, 0.01) : smooth(0.999);
-send1 = vslider("[1]Send A[style:knob]", 1, 0, 1, 0.01) : smooth(0.999);
-send2 = vslider("[2]Send B[style:knob]", 1, 0, 1, 0.01) : smooth(0.999);
-
-
+slider = vslider("[3]Volume", 1, 0, 1, 0.01) : si.smooth(0.999);
+send1 = vslider("[1]Send A[style:knob]", 1, 0, 1, 0.01) : si.smooth(0.999);
+send2 = vslider("[2]Send B[style:knob]", 1, 0, 1, 0.01) : si.smooth(0.999);
